@@ -1,0 +1,94 @@
+--CREATE DATABASE registeration;
+--CREATE TABLE login (
+--	id INT PRIMARY KEY,
+--    username VARCHAR(50) NOT NULL UNIQUE, 
+--    password VARCHAR(255) NOT NULL,     
+--    email VARCHAR(100) NOT NULL UNIQUE
+--);
+--INSERT INTO login (id,username,password,email) VALUES
+--(1,'ann','123','annm@gmail.com'),
+--(2,'anna','456','anna@gmail.com'),
+--(3,'hanna','789','hanna@gmail.com');
+--UPDATE login SET password='2002' WHERE id=1;
+--SELECT id,username,password,email FROM login;
+--DELETE FROM login WHERE id=3;
+--SELECT id,username,password,email FROM login;
+--CREATE TABLE signup (
+--    id INT PRIMARY KEY,   
+--    username VARCHAR(50) NOT NULL UNIQUE,
+--    password VARCHAR(255) NOT NULL,      
+--    email VARCHAR(100) NOT NULL UNIQUE
+--);
+--INSERT INTO signup (id,username,password,email) VALUES
+--(1,'ani','123','anni@gmail.com'),
+--(2,'akhi','456','akhi@gmail.com'),
+--(3,'haa','789','haaa@gmail.com');
+--UPDATE signup SET id=4 WHERE username='123';
+--SELECT id,username,password,email FROM signup WHERE username LIKE 'a%';
+--DELETE FROM signup WHERE id=4;
+--SELECT id,username,password,email FROM signup;
+--CREATE TABLE employee (
+-- id INT PRIMARY KEY,
+-- name VARCHAR(255) NOT NULL,
+-- departmentname VARCHAR(255) NOT NULL,
+-- salary INT NOT NULL
+-- );
+--INSERT INTO employee VALUES
+-- (1,'appu','marketing',20000),
+-- (2,'seethal','cleanning',8000),
+-- (3,'luo','supervisor',12000),
+-- (4,'mary','manager',14000),
+-- (5,'aparna','marketing',18000),
+-- (6,'sekar','cleanning',10000),
+-- (7,'ave','marketing',24000),
+-- (8,'harry','marketing',14000),
+-- (9,'leo','cleanning',9000),
+-- (10,'gadha','cleanning',6000),
+-- (11,'manu','supervisor',16000),
+-- (12,'radha','cleanning',5000),
+-- (13,'joel','supervisor',13000);
+--SELECT id,name,departmentname,salary from employee;
+--SELECT MAX(salary) AS secondHighestSalary
+--FROM employee
+--WHERE salary < (SELECT MAX(salary) FROM employee);
+--SELECT COUNT(id),departmentname FROM employee GROUP BY departmentname;
+--CREATE TABLE employeelist (
+--	employee_id INT PRIMARY KEY,
+--	employee_name VARCHAR(255),
+--	department_id INT
+--);
+--CREATE TABLE departmentlist (
+--	department_id INT PRIMARY KEY,
+--	deaprtment_name VARCHAR(255)
+--);
+--INSERT INTO employeelist 
+--	(employee_id,employee_name,department_id) 
+--VALUES 
+--	(1,'ann',1),
+--	(2,'joseph',3),
+--	(3,'hannan',2),
+--	(4,'chinju',5);
+--INSERT INTO departmentlist 
+--	(department_id,deaprtment_name) 
+--VALUES 
+--	(1,'marketing'),
+--	(2,'cleaning'),
+--	(3,'manager'),
+--	(4,'supervisor');
+--SELECT employee_id,employee_name,deaprtment_name
+--FROM employeelist
+--INNER JOIN departmentlist ON employeelist.employee_id = departmentlist.department_id;
+--SELECT employee_id,employee_name,deaprtment_name
+--FROM employeelist
+--LEFT JOIN departmentlist ON employeelist.employee_id = departmentlist.department_id;
+--SELECT employee_id,employee_name,deaprtment_name
+--FROM employeelist
+--RIGHT JOIN departmentlist ON employeelist.employee_id = departmentlist.department_id;
+--SELECT employee_id,employee_name,deaprtment_name
+--FROM employeelist
+--FULL OUTER JOIN departmentlist ON employeelist.employee_id = departmentlist.department_id;
+--SELECT a.employee_id,b.employee_name,a.department_id
+--FROM employeelist a,employeelist b
+--WHERE a.employee_id=b.employee_id 
+--ORDER BY b.employee_name;
+

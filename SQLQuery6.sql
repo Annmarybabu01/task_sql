@@ -1,0 +1,69 @@
+---- Create the database
+--CREATE DATABASE practicestoredprocedure;
+--GO
+---- Switch to the new database
+--USE practicestoredprocedure;
+--GO
+---- Create the stored procedure to create the signup table
+--CREATE PROCEDURE CreateSignupTable
+--AS
+--BEGIN
+--    EXEC sp_executesql N'
+--    CREATE TABLE signup (
+--        id INT PRIMARY KEY,   
+--        username VARCHAR(50) NOT NULL UNIQUE,
+--        password VARCHAR(255) NOT NULL,      
+--        email VARCHAR(100) NOT NULL UNIQUE
+--    );
+--    ';
+--END;
+--GO
+---- Execute the stored procedure to create the signup table
+--EXEC CreateSignupTable;
+--GO
+---- Create the stored procedure to insert data into the signup table
+--CREATE PROCEDURE insertdata
+--AS 
+--BEGIN
+--    INSERT INTO signup (id, username, password, email)
+--    VALUES
+--        (1,'ani','123','anni@gmail.com'),
+--        (2,'akhi','456', 'akhi@gmail.com'),
+--        (3,'haa','789','haaa@gmail.com');
+--END;
+--GO
+---- Execute the stored procedure to insert data
+--EXEC insertdata;
+--GO
+--CREATE PROCEDURE readdata
+--AS
+--BEGIN
+--    SELECT id, username, password, email FROM signup;
+--END;
+--GO
+--EXEC readdata;
+--CREATE PROCEDURE upadte 
+--AS
+--	BEGIN 
+--		UPDATE signup SET password='664' WHERE id=2;
+--	END;
+--GO
+--EXEC upadte ;
+--EXEC readdata;
+--CREATE PROCEDURE deletedata 
+--AS
+--	BEGIN 
+--		DELETE FROM signup WHERE id=3;
+--	END;
+--GO
+--EXEC deletedata;
+--EXEC readdata;
+--CREATE PROCEDURE deletetable
+--AS 
+--	BEGIN
+--		DROP TABLE signup;
+--	END;
+--GO
+--EXEC deletetable;
+--EXEC readdata;
+
